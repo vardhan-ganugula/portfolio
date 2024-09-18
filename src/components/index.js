@@ -13,6 +13,7 @@ import MessagesBox from './MessagesBox'
 import MessageContainer from "./MessageContainer";
 import ProjectBox from "./ProjectBox";
 import ProjectContainer from "./ProjectContainer";
+import Loading from "./Loading";
 export {
-    ProjectContainer,ProjectBox, MessagesBox, MessageContainer,AdminHeader,Sidebar,Login,Header, Main, Footer, ExperienceSection, HeroPage, WorkPage, AboutSection,ContectSection
+    Loading,ProjectContainer,ProjectBox, MessagesBox, MessageContainer,AdminHeader,Sidebar,Login,Header, Main, Footer, ExperienceSection, HeroPage, WorkPage, AboutSection,ContectSection
 }

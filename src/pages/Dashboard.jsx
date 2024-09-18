@@ -1,10 +1,22 @@
-import React from 'react';
-import { Login, AdminHeader, Sidebar,MessageContainer } from '../components';
+import React, { useEffect, useState } from 'react';
+import { Login, AdminHeader, Sidebar,Loading } from '../components';
 import { useFirebase } from '../context/FirebaseContext';
 
 function Dashboard({children, title, subtitle}) {
   const { isUserLoggedIn} = useFirebase();
-  if (!isUserLoggedIn) {
+  const [loading, setLoading] = useState(true);
+  const [logged, setLogged] = useState(false);
+  useEffect(()=> {
+    if(isUserLoggedIn){
+      setLoading(false)
+      setLogged(true)
+    }
+  })
+  if(loading){
+    return <Loading/>
+  }
+  
+  if (!logged) {
     return <Login />;
   }else
   return (
