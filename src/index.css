@@ -57,3 +57,15 @@
 .profile_contact_input{
     @apply bg-transparent border px-3 py-2 rounded-sm w-full md:w-[400px] border-white/20 outline-none text-white hover:border-white/30
 }
+#loader{
+    animation: loading 1s linear infinite;
+    transition: all ease 5s;
+}
+@keyframes loading {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+    
+}
