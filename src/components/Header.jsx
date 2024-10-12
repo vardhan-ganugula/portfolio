@@ -12,7 +12,7 @@ function Header() {
     <>
       <nav className="fixed z-10 w-full px-5 pt-4 pb-2 flex justify-around border-b-2 border-white/10 bg-zinc-900">
         {/* logo */}
-        <div className="text-2xl text-white font-bold ">Vandron</div>
+        <div className="text-2xl text-white font-bold ">{import.meta.env.VITE_APPNAME}</div>
 
         {/* desktop navbar */}
         <ul className="hidden md:flex items-center gap-4" id='desktop_area'>
