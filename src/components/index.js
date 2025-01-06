@@ -14,6 +14,7 @@ import MessageContainer from "./MessageContainer";
 import ProjectBox from "./ProjectBox";
 import ProjectContainer from "./ProjectContainer";
 import Loading from "./Loader";
+import SocialIcons from './SocialIcons'
 export {
-   Loading, ProjectContainer,ProjectBox, MessagesBox, MessageContainer,AdminHeader,Sidebar,Login,Header, Main, Footer, ExperienceSection, HeroPage, WorkPage, AboutSection,ContectSection
+   Loading,SocialIcons, ProjectContainer,ProjectBox, MessagesBox, MessageContainer,AdminHeader,Sidebar,Login,Header, Main, Footer, ExperienceSection, HeroPage, WorkPage, AboutSection,ContectSection
 }
