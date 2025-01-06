@@ -25,5 +25,4 @@ function Main() {
   );
 }
 
-// {isLoading && <div className="w-[350px] h-[350px]"> <img src="https://cdn.pixabay.com/animation/2023/10/08/03/19/03-19-26-213_512.gif" alt="loading" className="w-full h-full object-contain" />  </div> }
 export default Main;
