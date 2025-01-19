@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import "../styles/ping.css";
 import { useParams } from "react-router-dom";
 
@@ -16,14 +16,24 @@ const Pingpage = () => {
     });
   }, []);
 
+  const pingSite = useCallback(async () => {
+    const resp = await fetch(
+      `https://cors-anywhere.herokuapp.com/https://${url}`
+    );
+    if (resp.status === 200) {
+      return true;
+    } else {
+      return await pingSite();
+    }
+  }, [url, useParams]);
+
   useEffect(() => {
-    fetch(`https://cors-anywhere.herokuapp.com/https://${url}`)
-      .then((res) => {
-        console.log(res.status);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    pingSite().then((res) => {
+      if (res) {
+        console.log("Site is up");
+        window.location.href = `https://${url}`;
+      }
+    });
   }, [useParams]);
 
   return (
