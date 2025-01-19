@@ -4,28 +4,26 @@ import { useParams } from "react-router-dom";
 
 const Pingpage = () => {
   const { url } = useParams();
-
-  useEffect(() => {
-    const verticalElements = document.querySelectorAll(".vertical");
-    verticalElements.forEach((element, index) => {
-      if (index % 2 === 0) {
-        element.style.transform = "rotate(90deg)";
-      } else {
-        element.style.transform = "rotate(-90deg)";
-      }
-    });
-  }, []);
+  
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   const pingSite = useCallback(async () => {
-    const resp = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://${url}`
-    );
-    if (resp.status === 200) {
-      return true;
-    } else {
+    try {
+      const resp = await fetch(
+        `https://cors-anywhere.herokuapp.com/https://${url}`
+      );
+      if (resp.status === 200) {
+        return true;
+      } else {
+        await delay(2000); 
+        return await pingSite();
+      }
+    } catch (error) {
+      console.log("Error pinging site:", error);
+      await delay(2000);
       return await pingSite();
     }
-  }, [url, useParams]);
+  }, [url]);
 
   useEffect(() => {
     pingSite().then((res) => {
@@ -34,7 +32,7 @@ const Pingpage = () => {
         window.location.href = `https://${url}`;
       }
     });
-  }, [useParams]);
+  }, [pingSite, url]);
 
   return (
     <main className="w-full h-screen flex justify-center items-center flex-col bg-zinc-900">
