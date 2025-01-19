@@ -3,9 +3,20 @@ import "../styles/ping.css";
 import { useParams } from "react-router-dom";
 
 const Pingpage = () => {
+  useEffect(() => {
+    const verticalElements = document.querySelectorAll(".vertical");
+    verticalElements.forEach((element, index) => {
+      if (index % 2 === 0) {
+        element.style.transform = "rotate(90deg)";
+      } else {
+        element.style.transform = "rotate(-90deg)";
+      }
+    });
+  }, []);
+
   const { url } = useParams();
-  
-  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const pingSite = useCallback(async () => {
     try {
@@ -15,23 +26,25 @@ const Pingpage = () => {
       if (resp.status === 200) {
         return true;
       } else {
-        await delay(2000); 
+        await delay(2000);
         return await pingSite();
       }
     } catch (error) {
       console.log("Error pinging site:", error);
-      await delay(2000);
+      await delay(5000);
       return await pingSite();
     }
   }, [url]);
 
   useEffect(() => {
-    pingSite().then((res) => {
-      if (res) {
-        console.log("Site is up");
-        window.location.href = `https://${url}`;
-      }
-    });
+    if (url) {
+      pingSite().then((res) => {
+        if (res) {
+          console.log("Site is up");
+          window.location.href = `https://${url}`;
+        }
+      });
+    }
   }, [pingSite, url]);
 
   return (
