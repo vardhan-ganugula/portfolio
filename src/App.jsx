@@ -1,6 +1,7 @@
 import React from "react";
-import {HomePage, NotFound, ViewMessages, AddProjects, ViewProjects} from "./pages";
+import {HomePage, NotFound, ViewMessages, AddProjects, ViewProjects,Pingpage} from "./pages";
 import {Route, Routes} from 'react-router-dom'
+
 function App() {
   
   return (
@@ -11,6 +12,8 @@ function App() {
         <Route path="/admin" Component={ViewMessages} />
         <Route path="/add-project" Component={AddProjects} />
         <Route path="/view-project" Component={ViewProjects} />
+        <Route path="/ping" Component={Pingpage} />
+        <Route path="/ping/:url" Component={Pingpage} />
       </Routes>
     </>
   );
