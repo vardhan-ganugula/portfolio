@@ -3,9 +3,10 @@ import { TbSlashes } from "react-icons/tb";
 import { IoLogoHtml5 } from "react-icons/io5";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaJs } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiPython } from "react-icons/si";
 import { SiFlask } from "react-icons/si";
+import { DiReact } from 'react-icons/di';
 
 function ExperienceSection() {
   return (
@@ -41,6 +42,14 @@ function ExperienceSection() {
                     <div className='showcase-icon'>
                         <RiTailwindCssFill size={50}/>
                         <p className='text-center pt-1'>Tailwind</p>
+                    </div>
+                    <div className='showcase-icon'>
+                        <DiReact size={50}/>
+                        <p className='text-center pt-1'>ReactJs</p>
+                    </div>
+                    <div className='showcase-icon'>
+                        <RiNextjsLine size={50}/>
+                        <p className='text-center pt-1'>NextJs</p>
                     </div>
                 </div>
             </div>

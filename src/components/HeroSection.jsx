@@ -26,7 +26,7 @@ function HeroPage() {
           <h6 className='mt-5 px-2 text-white font-mono'>Hi, I'm Vardhan, a Frontend Web Developer who turns innovative ideas into engaging, interactive realities.</h6>
           <div className='mt-5 px-2 flex gap-5'>
             <Link to='work' smooth={true} duration={500} className='px-8 py-2 font-small rounded text-white bg-sky-400 border border-teal-600 hover:bg-white hover:text-sky-500 hover:shadow-xl hover:shadow-cyan-400/20 cursor-pointer'>Projects</Link>
-            <a href="/vresume.pdf" className='px-8 py-2 font-small rounded bg-white text-sky-400 border border-teal-600 hover:bg-sky-100 hover:shadow-xl hover:shadow-cyan-400/20'>Resume</a>
+            <a href="/vardhan.pdf" className='px-8 py-2 font-small rounded bg-white text-sky-400 border border-teal-600 hover:bg-sky-100 hover:shadow-xl hover:shadow-cyan-400/20'>Resume</a>
           </div>
         </div>
       </div>
