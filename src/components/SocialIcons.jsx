@@ -18,7 +18,7 @@ const SocialBox = ({ icon, text,color }) => {
 
 function SocialIcons() {
   return (
-    <div className='flex fixed bottom-1/2 right-0 -translate-y-1/2 bg-white w-10 min-h-24 flex-col'>
+    <div className='flex fixed bottom-1/2 right-0 translate-y-1/2 bg-white w-10 min-h-24 flex-col'>
       {
         socials.map((social, index) => (
           <a href={social.link} target='_blank' rel='noopener noreferrer' key={index}>
