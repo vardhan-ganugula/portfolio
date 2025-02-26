@@ -1,0 +1,18 @@
+#loader_v{
+    fill-opacity: 0;
+    stroke: white;
+    stroke-width: 1;
+    stroke-dashoffset: 500;
+    stroke-dasharray: 500;
+    animation: draw 2s linear infinite;
+}
+
+
+@keyframes draw{
+    0%{
+        stroke-dashoffset: 500;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}

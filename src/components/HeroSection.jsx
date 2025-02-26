@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 function HeroPage() {
   const [text] = useTypewriter({
-    words: ['Web Developer', 'Frontend Dev', 'Web Designer'],
+    words: ['Web Developer', 'Mern Stack Dev', 'Fullstack Dev', ],
     loop: true,
     delaySpeed: 2000,
   });

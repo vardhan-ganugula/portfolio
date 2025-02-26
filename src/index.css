@@ -69,3 +69,10 @@
     }
     
 }
+
+
+.project_card{
+    background: url('./assets/logo_v.svg') no-repeat center;
+    background-size: contain;
+    background-position: center;
+}

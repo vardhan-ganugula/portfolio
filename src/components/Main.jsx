@@ -1,5 +1,6 @@
 import React,{Suspense} from "react";
 import {HeroPage, ExperienceSection, AboutSection,ContectSection} from "./";
+import Loader2 from "./Loader2";
 const WorkSection = React.lazy(()=> import("./WorkPage"))
 function Main() {
   return (
@@ -14,7 +15,7 @@ function Main() {
         <AboutSection/>
       </div>
       <div id="work" className="py-5">
-        <Suspense fallback={<div className="w-[350px] h-[350px]"> Loading </div> }>
+        <Suspense fallback={<Loader2/>}>
           <WorkSection/>
         </Suspense>
       </div>

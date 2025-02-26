@@ -1,6 +1,7 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TbSlashes } from "react-icons/tb";
 import { useFirebase } from "../context/FirebaseContext";
+import Loader2 from "./Loader2";
 function WorkPage() {
   let { getProjects } = useFirebase();
   const [projects, setProjects] = useState([]);
@@ -30,11 +31,11 @@ function WorkPage() {
         <div className="flex flex-wrap gap-5 justify-center md:justify-start">
           
           {projects.map((proj) => (
-            <div className="w-[350px] h-[350px] bg-red-500 relative group overflow-hidden " key={proj.time}>
+            <div className="w-[350px] h-[350px] project_card relative group overflow-hidden " key={proj.time}>
               <div className="w-full h-full">
                 <img src={proj.coverPic} alt="portfolio picture" className="object-cover w-full h-full" />
               </div>
-              <div className="absolute left-0 bg-yellow-300/50 w-full h-full flex flex-col items-center justify-center gap-9 bottom-[-100%] group-hover:bottom-0 transition-all duration-500">
+              <div className="absolute left-0 bg-sky-200/50 w-full h-full flex flex-col items-center justify-center gap-9 bottom-[-100%] group-hover:bottom-0 transition-all duration-500">
                 <h4 className="text-blue-600 text-2xl font-bold capitalize ">{proj.projectName}</h4>
                 <div>
                   <a
@@ -51,9 +52,12 @@ function WorkPage() {
                   </a>
                 </div>
               </div>
+              <div className="absolute top-0 left-0 bg-[#FFEB00]/50  w-full h-8 text-center p-2 group-hover:-top-20 duration-200 transition-all text-[#000957]">
+                <span >Hover me to view code and demo</span>
+              </div>
             </div>
           ))}
-          {isLoading && <div className="w-[350px] h-[350px]"> <img src="https://cdn.pixabay.com/animation/2023/10/08/03/19/03-19-26-213_512.gif" alt="loading" className="w-full h-full object-cover" />  </div> }
+          {isLoading && <Loader2 /> }
         </div>
         { (showLoadMore) && <button className="mx-auto bg-red-400 px-5 py-2 text-white mt-5 block" onClick={fetchProjects}>Load More</button>}
       </div>
