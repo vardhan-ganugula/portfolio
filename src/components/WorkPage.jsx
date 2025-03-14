@@ -39,7 +39,7 @@ function WorkPage() {
                 <h4 className="text-blue-600 text-2xl font-bold capitalize ">{proj.projectName}</h4>
                 <div>
                   <a
-                    href={proj.demoLink}
+                    href={ "/ping/" + proj.demoLink.replace('https://', "")}
                     className="rounded-md px-3 py-2 text-white bg-sky-400 mr-5"
                   >
                     Demo

@@ -16,36 +16,32 @@ const Pingpage = () => {
 
   const { url } = useParams();
 
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  const pingSite = useCallback(async () => {
-    try {
-      const resp = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://${url}`
-      );
-      if (resp.status === 200) {
-        return true;
-      } else {
-        await delay(2000);
-        return await pingSite();
-      }
-    } catch (error) {
-      console.log("Error pinging site:", error);
-      await delay(5000);
-      return await pingSite();
-    }
-  }, [url]);
+
+  
+
 
   useEffect(() => {
-    if (url) {
-      pingSite().then((res) => {
-        if (res) {
-          console.log("Site is up");
-          window.location.href = `https://${url}`;
+    let interval;
+    if(url){
+
+      interval = setInterval( async ()=> {
+        const resp = await fetch(
+          `https://ul.mewtron.tech/forward/${url}`
+        );
+        if (resp.status === 200) {
+          window.location.href = "http://" + url;
         }
-      });
+      }, 2000 );
+      
     }
-  }, [pingSite, url]);
+
+    return () => {
+      clearInterval(interval)
+    }
+
+
+  }, [url])
 
   return (
     <main className="w-full h-screen flex justify-center items-center flex-col bg-zinc-900">

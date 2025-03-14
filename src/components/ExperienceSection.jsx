@@ -13,7 +13,7 @@ function ExperienceSection() {
     <>
         <div className='py-5 px-5 border-b-2 border-zinc-800/50 items-center'>
             <div>
-                <h4 className='section-title'>Experience</h4>
+                <h4 className='section-title'>Technologies</h4>
                 <p className='section-para'><TbSlashes/> These are the technologies I'm familier with</p>
             </div>
             <div className='py-5 '>
@@ -47,10 +47,7 @@ function ExperienceSection() {
                         <DiReact size={50}/>
                         <p className='text-center pt-1'>ReactJs</p>
                     </div>
-                    <div className='showcase-icon'>
-                        <RiNextjsLine size={50}/>
-                        <p className='text-center pt-1'>NextJs</p>
-                    </div>
+                    
                 </div>
             </div>
         </div>
