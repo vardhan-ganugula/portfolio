@@ -1,18 +1,37 @@
-#loader_v{
-    fill-opacity: 0;
-    stroke: white;
-    stroke-width: 1;
-    stroke-dashoffset: 500;
-    stroke-dasharray: 500;
-    animation: draw 2s linear infinite;
+#loader_v {
+  fill-opacity: 0;
+  stroke: white;
+  stroke-width: 1;
+  stroke-dashoffset: 500;
+  stroke-dasharray: 500;
+  animation: draw 2s linear infinite;
 }
 
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 
-@keyframes draw{
-    0%{
-        stroke-dashoffset: 500;
-    }
-    100%{
-        stroke-dashoffset: 0;
-    }
+.star_container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 50px;
+}
+.star_container button {
+  outline: none;
+  border: none;
+  color: none;
+  background: none;
+  padding: 0;
+}
+.star_container button svg {
+  stroke: #6563ff;
+  fill: #242424;
 }
