@@ -6,7 +6,10 @@ import ProjectDescription from "../components/ProjectDescription";
 import ProjectTags from "../components/ProjectTags";
 import ProjectFeedback from "../components/ProjectFeedback";
 import { HiMiniGlobeEuropeAfrica } from "react-icons/hi2";
-import StarRating from "../components/StarRating";
+import {useParams} from 'react-router-dom'
+import { app as firebaseApp } from "../context/FirebaseContext";
+import { getFirestore, getDoc, collection, doc } from "firebase/firestore";
+
 
 const AboutProject = () => {
   const tags = [
@@ -23,10 +26,20 @@ const AboutProject = () => {
     "tailwind",
     "javascript",
   ];
-
-  const updateStars = (value) => {
-    console.log(value)
+  const {id} = useParams();
+  const db = getFirestore(firebaseApp);
+  async function results(){
+    const ref = doc(db, 'projects', id);
+    const res = await getDoc(ref);
+    if(res.exists()){
+      console.log(res.data())
+    }
   }
+
+  setTimeout(()=> {
+    results();
+  }, 0)
+
 
   return (
     <section className="bg-zinc-950 min-h-screen w-full flex items-center justify-center">
@@ -57,10 +70,6 @@ const AboutProject = () => {
             </a>
           </div>
 
-
-          <div className="inline">
-            <StarRating value={3.8} onChange={updateStars} />
-          </div>
 
 
         </div>

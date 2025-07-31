@@ -22,7 +22,7 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_appId,
   databaseURL: import.meta.env.VITE_databaseURL
 };
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const firestore = getFirestore(app);
 const storage = getStorage(app);

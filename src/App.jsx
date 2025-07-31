@@ -14,7 +14,7 @@ function App() {
         <Route path="/add-project" Component={AddProjects} />
         <Route path="/view-project" Component={ViewProjects} />
         <Route path="/ping" Component={Pingpage} />
-        <Route path="/project" Component={AboutProject} />
+        <Route path="/project/:id" Component={AboutProject} />
         <Route path="/ping/:url" Component={Pingpage} />
       </Routes>
     </>

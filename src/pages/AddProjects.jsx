@@ -84,9 +84,25 @@ function AddProjects() {
                   required
                 />
               </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor={codeId} className="text-sm">
+                  Description <sup className="text-red-500">*</sup>{" "}
+                </label>
+                <textarea
+                  type="url"
+                  value={codeLink}
+                  onChange={(e) => setCodeLink(e.target.value)}
+                  name="code_link"
+                  id={codeId}
+                  className="form__input"
+                  autoComplete="false"
+                  placeholder="enter the demo link"
+                  required
+                ></textarea>
+              </div>
             </div>
 
-            <div className="md:w-[350px] w-full md:h-auto p-5 h-[250px]">
+            <div className="md:w-[350px] w-full p-5 h-[350px]">
               <label
                 className="border mt-5 border-dashed bg-white/10 w-full h-full rounded cursor-pointer flex flex-col items-center justify-center"
                 htmlFor={coverId}

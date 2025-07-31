@@ -1,5 +1,5 @@
 import React from 'react';
-import model from '../assets/model.jpeg';
+import model from '../assets/model.png';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { Link } from 'react-scroll';
 

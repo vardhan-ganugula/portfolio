@@ -1,6 +1,6 @@
 import React from "react";
 import { TbSlashes } from "react-icons/tb";
-import Hero from "../assets/model.jpeg";
+import Hero from "../assets/model.png";
 function AboutSection() {
   return (
     <div className="py-5 px-4 border-b-2 border-zinc-800/50 items-center">
