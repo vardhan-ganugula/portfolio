@@ -1,17 +1,35 @@
-import React, { useRef } from "react";
-import { FaArrowRight } from "react-icons/fa6";
+import axiosInstance from "../utils/axios";
+import { useRef } from "react";
 import { RxCross1 } from "react-icons/rx";
-import { useFirebase } from "../context/FirebaseContext";
 import { toast } from "react-toastify";
 
 function ProjectBox({ projectname, codelink, demolink, coverpic, id }) {
-  const { deleteProject } = useFirebase();
   const msgRef = useRef();
   const imgRef = useRef();
+  const deleteProject = async(id) => {
+    try {
+      const resp = await axiosInstance.delete(`/projects/${id}`);
+      if(resp.data.status === 'success'){
+        if (msgRef.current) {
+          msgRef.current.style.display = "none";
+        }
+        toast.info("project deleted successfully");
+      }else{
+        if (msgRef.current) {
+          msgRef.current.style.display = "block";
+        }
+        toast.info("project deletion unsuccessfully");
+
+      }
+    } catch (error) {
+      console.log(error)
+    }
+    
+  }
   function handleDelete() {
     deleteProject(id);
-    msgRef.current.style.display = "none";
-    toast.info("message deleted successfully");
+    
+
   }
 
   function handleImg(){
