@@ -24,4 +24,6 @@ dist-ssr
 *.sw?
 .env 
 dist/robots.txt 
-dist
+dist 
+server/node_modules
+server/.env

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { TbSlashes } from "react-icons/tb";
 import Hero from "../assets/model.png";
 function AboutSection() {
@@ -13,7 +13,7 @@ function AboutSection() {
       <div className="py-5 grid gap-5 md:grid-rows-1 grid-rows-1 grid-cols-1 md:grid-cols-3 px-2 justify-start">
         <div className="md:h-auto text-justify flex flex-col gap-3 text-white text-md md:col-span-2 order-2 md:order-1 ">
           <p>
-            I'm a dedicated Software Developer with a focus on web development,
+            I&apos;m a dedicated Software Developer with a focus on web development,
             basic to moderate cloud technology knowledge, and a solid foundation
             in programming. I work with HTML, CSS, Python, and C. While my cloud
             expertise is at an intermediate level, I have a good grasp of

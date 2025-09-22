@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import { useFirebase } from '../context/FirebaseContext'
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState, useCallback } from 'react'
 import ProjectBox from './ProjectBox';
+import axiosInstance from '../utils/axios';
+
 function ProjectContainer() {
-    const {getAllProjects} = useFirebase();
     const [projects, setProjects] = useState([])
-    const navigate = useNavigate();
+    const getAllProjects = useCallback(async () => {
+      try {
+        const resp = await axiosInstance.get('/projects');
+        const response = await resp.data;
+        setProjects(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }, [setProjects]);
+
     useEffect(()=> {
-        async function allProjects() {
-            try {
-              const projectData = await getAllProjects();
-              setProjects(projectData);
-            } catch (error) {
-              console.error('Error fetching projects:', error);
-            }
-          }
-          allProjects();
-    }, [getAllProjects, navigate])
+      getAllProjects();
+    }, [getAllProjects])
   return (
     <>
         <section className='p-5 w-full h-auto overflow-y-auto'>
@@ -25,7 +25,7 @@ function ProjectContainer() {
             </div> }
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
                 {projects.map(proj => (
-                    <ProjectBox projectname={proj.projectName} demolink={proj.demoLink} codelink={proj.codeLink} coverpic={proj.coverPic} key={proj.time} id={proj.id} />
+                    <ProjectBox projectname={proj.projectName} demolink={proj.demoLink} codelink={proj.githubLink} coverpic={proj.imageURL} key={proj._id} id={proj._id} />
                 ))}
             </div>
         </section>

@@ -4,9 +4,10 @@ import { IoLogoHtml5 } from "react-icons/io5";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaJs } from "react-icons/fa";
 import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { SiPython } from "react-icons/si";
+import { SiCplusplus, SiPython, SiRedux } from "react-icons/si";
 import { SiFlask } from "react-icons/si";
-import { DiReact } from 'react-icons/di';
+import { DiMongodb, DiReact } from 'react-icons/di';
+import { FaJava, FaNodeJs } from 'react-icons/fa6';
 
 function ExperienceSection() {
   return (
@@ -47,7 +48,26 @@ function ExperienceSection() {
                         <DiReact size={50}/>
                         <p className='text-center pt-1'>ReactJs</p>
                     </div>
-                    
+                    <div className='showcase-icon'>
+                        <SiCplusplus  size={50}/>
+                        <p className='text-center pt-1'>C++</p>
+                    </div>
+                    <div className='showcase-icon'>
+                        <FaJava size={50}/>
+                        <p className='text-center pt-1'>Java</p>
+                    </div>
+                    <div className='showcase-icon'>
+                        <DiMongodb size={50}/>
+                        <p className='text-center pt-1'>MongoDB</p>
+                    </div>
+                    <div className='showcase-icon'>
+                        <FaNodeJs size={50}/>
+                        <p className='text-center pt-1'>Node.JS</p>
+                    </div>
+                    <div className='showcase-icon'>
+                        <SiRedux  size={50}/>
+                        <p className='text-center pt-1'>Node.JS</p>
+                    </div>
                 </div>
             </div>
         </div>
